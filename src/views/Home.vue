@@ -1,13 +1,13 @@
 <template>
-  <div class="home">
-    <span class="center" style="padding: 20px 0px">
-      <h1>De Wit Worstenbrood</h1>
-      <h3>Un worstenbroodje van De Wit is er een mi pit! 🔥</h3>
-    </span>
+  <div class="home-wrapper">
+    <div class="home">
+      <span class="center" style="padding: 20px 0px">
+        <h1 style="margin-bottom: -20px">De Wit Worstenbrood</h1>
+        <h3 style="margin-bottom: 50px">Un worstenbroodje van De Wit is er een mi pit! 🔥</h3>
+      </span>
 
-    <div class="two-divide">
-      <span>
-        <p>
+      <DoubleSection>
+        <p slot="left">
           Begonnen als experiment, altijd al eens zelf worstenbrood willen bakken.
           De afgelopen periode de stap toch maar gezet.<br /><br />
 
@@ -21,30 +21,50 @@
           Wil je bestellen, neem maar contact op via een persoonlijk bericht.
           Afhalen na afspraak in Zijtaart.
         </p>
-      </span>
-      
-      <span></span>
+        <p slot="right" class="front-image-wrapper">
+          <img src="@/assets/products/products_all1.jpg" class="front-image"/>
+        </p>
+      </DoubleSection>
     </div>
-
-    <p>
-      
-    </p>
   </div>
 </template>
 
 <script>
+import DoubleSection from "@/components/DoubleSection"
+
 export default {
-  name: 'Home'
+  name: 'Home',
+
+  components: {
+    DoubleSection
+  }
 }
 </script>
 
 <style scoped lang="scss">
-.center {
+.home-wrapper {
   text-align: center;
-}
 
-.two-divide {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  .home {
+    max-width: 800px;
+    display: inline-block;
+    text-align: left;
+
+    .center {
+      text-align: center;
+    }
+
+    .front-image-wrapper {
+      text-align: center;
+      margin-top: 50px;
+
+      .front-image {
+        width: 300px;
+        opacity: 0.6;
+        transform: rotate(-20deg);
+        border-radius: 30px;
+      }
+    }
+  }
 }
 </style>
