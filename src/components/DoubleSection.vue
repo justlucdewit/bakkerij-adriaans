@@ -1,6 +1,6 @@
 <template>
   <div class="double-section">
-    <span>
+    <span class="left">
       <slot name="left"></slot>
     </span>
     
@@ -23,9 +23,19 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  
+
   @media only screen and (max-width: $size-tablet) {
     & {
       display: block;
+    }
+
+    
+  }
+
+  @media only screen and (min-width: $size-tablet) {
+    .left {
+      margin-right: 20px;
     }
   }
 }

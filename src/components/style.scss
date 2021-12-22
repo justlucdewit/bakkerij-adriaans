@@ -5,7 +5,7 @@ $size-laptop: 1024px;
 $size-desktop: 1200px;
 
 // Background colors
-$color-bg-standard: #ccc;
+$color-bg-standard: #eee;
 
 // Foreground colors
 $color-fg-standard: black;
@@ -20,9 +20,27 @@ button {
 
 .btn {
   padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
 
   &:hover {
     background: rgba(0, 0, 0, 0.05);
+  }
+
+  &.cancle, &.confirm {
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  &.cancle {
+    background: #ddd;
+  }
+
+  &.confirm {
+    background: orange;
+    color: white;
   }
 }
 
@@ -37,4 +55,38 @@ html,
   margin: 0;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  background: $color-bg-standard;
+  border-collapse: collapse;
+
+  &.clickable {
+    tr {
+      &:hover {
+        background: darken($color-bg-standard, 20);
+        cursor: pointer;
+      }
+
+      &:nth-child(even):hover {
+          background: darken($color-bg-standard, 30);
+      }
+    }
+  }
+
+  tr {
+    th {
+      background: darken($color-bg-standard, 10);
+    }
+
+    td, th {
+      padding: 10px;
+    }
+
+    &:nth-child(even) {
+      background: darken($color-bg-standard, 10);
+    }
+  }
 }

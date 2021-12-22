@@ -30,7 +30,7 @@
             </router-link>
         </div>
 
-        <div class="mobile-navigator">
+        <div class="mobile-navigator" v-if="navLinks.length > 0">
             <button class="btn" @click="toggleBurger">
                 <unicon name="bars" fill="black"></unicon>
             </button>
@@ -91,7 +91,6 @@ export default {
 
 .header {
     background: $color-bg-standard;
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -130,7 +129,6 @@ export default {
             padding: 20px 5px;
             display: inline-block;
             text-align: center;
-            margin-right: 10px;
 
             &:hover {
                 background: rgba(0,0,0,0.1);
@@ -138,7 +136,6 @@ export default {
 
             &.router-link-exact-active {
                 background: rgba(0,0,0,0.05);
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             }
         }
     }
@@ -146,7 +143,6 @@ export default {
 
 .navigator {
     background: $color-bg-standard;
-    padding: 10px;
     padding-left: 40px;
     display: flex;
     align-items: center;
@@ -164,7 +160,6 @@ export default {
         padding: 20px 5px;
         display: inline-block;
         text-align: center;
-        margin-right: 10px;
 
         &:hover {
             background: rgba(0,0,0,0.1);
@@ -172,7 +167,6 @@ export default {
 
         &.router-link-exact-active {
             background: rgba(0,0,0,0.05);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
     }
 }
@@ -195,7 +189,6 @@ export default {
 
     .link-list {
         display: grid;
-        padding-bottom: 20px;
 
         .router-link {
             color: $color-fg-standard;
@@ -203,7 +196,6 @@ export default {
             padding: 20px 5px;
             display: block;
             text-align: center;
-            margin-right: 10px;
             width: calc(100% - 40px);
 
             &:hover {
@@ -212,7 +204,6 @@ export default {
 
             &.router-link-exact-active {
                 background: rgba(0,0,0,0.05);
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             }
         }
     }
