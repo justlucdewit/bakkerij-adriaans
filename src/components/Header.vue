@@ -102,7 +102,7 @@ export default {
     }
 
     #logo > img {
-        height: 60px;
+        height: 100px;
         padding-right: 20px;
         margin-left: 40px;
     }

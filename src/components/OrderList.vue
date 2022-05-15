@@ -3,7 +3,7 @@
     <div v-for="(product, index) in products" :key="index">
         <DoubleSection>
             <p slot="left" class="product-image-wrapper">
-            <img :src="require('@/assets/' + product.image)" class="product-image"/>
+            <img :src="require('@/assets/' + product.image)" class="product-image" :alt="product.name + ' product image'" />
             </p>
 
             <div slot="right" class="product-info">

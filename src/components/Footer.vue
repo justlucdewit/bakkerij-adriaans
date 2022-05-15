@@ -1,36 +1,48 @@
 <template>
     <div class="footer">
-        <span id="image-and-version">
-            <div>
-                <img v-if="image"
-                     style="height: 50px; padding: 20px 0px"
-                     :src="require('@/assets/' + image)"
-                     alt="footer image" />
-            </div>
-            <div>
-                v{{ version }}
-            </div>
-        </span>
-        
-        <span id='socials'>
-            <a v-for="social in socials"
-               :key="social.type"
-               :href="social.link"
-               target="_blank">
-               
-                <div class="social">
-                    <unicon :name="social.type" />
-                    {{ social.name }}
-                </div>
-            </a>
-        </span>
+        <DoubleSection>
+            <template #left>
+                <span id="image-and-version">
+                    <div>
+                        <img v-if="image"
+                            style="width: 200px; padding: 20px 20px 20px 0px"
+                            :src="require('@/assets/' + image)"
+                            alt="footer image" />
+                    </div>
+                    <div>
+                        v{{ version }}
+                    </div>
+                </span>
+            </template>
+
+            <template #right>
+                <span id='socials'>
+                    <a v-for="social in socials"
+                    rel="noopener"
+                    :key="social.type"
+                    :href="social.link"
+                    target="_blank">
+                    
+                        <div class="social">
+                            <unicon :name="social.type" />
+                            {{ social.name }}
+                        </div>
+                    </a>
+                </span>
+            </template>
+        </DoubleSection>
     </div>
 </template>
 
 <script>
+import DoubleSection from "@/components/DoubleSection";
 import { version } from '@/../package'
 
 export default {
+    components: {
+        DoubleSection
+    },
+
     props: {
         socials: {
             type: Array,
@@ -87,6 +99,9 @@ export default {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        img {
+            
+        }
     }
 }
 </style>
