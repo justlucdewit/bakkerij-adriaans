@@ -3,7 +3,7 @@
     <div v-for="(product, index) in products" :key="index">
         <DoubleSection>
             <p slot="left" class="product-image-wrapper">
-            <img :src="require('@/assets/' + product.image)" class="product-image" :alt="product.name + ' product image'" />
+            <img :src="product.image" class="product-image" :alt="product.name + ' product image'" />
             </p>
 
             <div slot="right" class="product-info">
@@ -12,18 +12,16 @@
                 </div>
 
                 <div class="weight">
-                    {{ product.weight }} • <span class="price">€ {{ product.price.toFixed(2) }}</span> per stuk
+                    {{ product.weight }} • <span class="price">€ {{ product.basePrice.toFixed(2) }}</span> per stuk
                 </div>
 
-                <div v-for="(paragraph, index) in product.description" :key="index">
-                    {{ paragraph }}
+                <div class="description">
+                    {{ product.description }}
                 </div>
 
                 <div>
-                    <button class="btn" @click="$emit('order', index)">BESTELLEN € {{ product.price.toFixed(2) }} </button>
+                    <button class="btn" @click="$emit('order', index)">BESTELLEN € {{ product.basePrice.toFixed(2) }} </button>
                 </div>
-
-                
             </div>
         </DoubleSection>
 

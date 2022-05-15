@@ -1,4 +1,5 @@
-# de_wit_worstenbroodjes
+# Bakkerij Adriaans
+Webshop, connecting to RMS 1.0.0 Beta
 
 ## Project setup
 ```

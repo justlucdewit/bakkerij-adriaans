@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header
-      logo="logo.png"
+      :logo="companyInfo.companyLogo"
       :navLinks="navLinks"
       :linkWidth="78"
     />
@@ -10,8 +10,8 @@
       <router-view />
     </div>
 
-    <Footer :socials="socials"
-            image="logo-small.png" />
+    <Footer :socials="companyInfo.socials"
+            :image="companyInfo.companyLogo" />
     
   </div>
 </template>
@@ -20,21 +20,29 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
+import RMS from './rms_connector'
+
 export default {
   components: {
     Header,
     Footer
   },
 
+  async mounted() {
+    this.companyInfo = await RMS.getCompanyInfo()
+    document.title = this.companyInfo.companyName
+  },
+
   data: () => ({
+    companyInfo: {},
     navLinks: [
       {
         name: 'Home',
         to: '/home'
       },
       {
-        name: 'Reviews',
-        to: '/reviews'
+        name: 'Producten',
+        to: '/producten'
       }
     ],
 

@@ -95,3 +95,14 @@ table {
     }
   }
 }
+
+input.form-control {
+  outline: none;
+  border: 1px solid $color-fg-standard;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.2em;
+  width: 100%;
+  background: none;
+  color: $color-fg-standard;
+}

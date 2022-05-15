@@ -2,7 +2,7 @@
     <span>
         <div class="header">
             <span id="logo" v-if="logo">
-                <img :src="require('@/assets/' + logo)" alt="logo" />
+                <img :src="logo" alt="logo" />
             </span>
             
             <span v-if="title" id="title">
@@ -94,6 +94,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0;
 
     @media only screen and (max-width: $size-tablet) {
         & {

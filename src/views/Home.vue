@@ -67,8 +67,6 @@
               <input v-model="pickupDate" type="date" style="width: 120px; margin-bottom: 20px;" />
             </span>
 
-
-
             <span>
               <button :class="{'btn confirm': true }" style="margin-right: 20px;" @click="$refs.basketView.show = false">
                 VERDER WINKELEN
@@ -126,67 +124,27 @@
       <div class="content-wrapper">
         <div class="content">
           <span class="center" style="padding: 20px 0px">
-            <h1>De Wit Worstenbrood</h1>
-            <h3 style="margin-top: -30px;">Un worstenbroodje van De Wit is er inne mi pit! 🔥</h3>
+            <h1>Bakkerij Adriaans</h1>
+            <h3 style="margin-top: -30px;">Lorem Ipsum</h3>
 
             <p>
-              Begonnen als experiment, altijd al eens zelf worstenbrood willen bakken en eind 2020 gestart mede door alle beperkingen door de Corona. Na veel testen en proberen uitgekomen bij een worstenbroodje wat door veel mensen als erg lekker werd bestempeld.  
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
 
             <p>
-              Een worstenbroodje waar pit in zit is uiteindelijk het resultaat. Een worstje met een mix van diverse kruiden/specerijen. Een goed gevuld en lekker worstenbroodje van 90-95 gram. We hebben ook een milde variant waar maar ¼ deel sambal in zit.  
-            </p>
-
-            <p>
-              <ul>
-                <li>
-                  Wij bakken alle bestelde worstenbroodjes vers, we bakken dus niet vooruit.
-                </li>
-                
-                <li>
-                  Opgehaalde broodjes kunnen dus altijd ingevroren worden.
-                </li>
-
-                <li>
-                  Natuurlijk zijn alle worstenbroodjes hand gemaakt.
-                </li>
-
-                <li>
-                  We hebben eventueel worstenbroodjes uit de vriezer voor als u te laat heeft besteld en toch nog op korte termijn wil genieten van een lekker worstenbroodje van de Wit.
-                </li>
-
-                <li>
-                  We gebruiken half om half ongekruid gehakt. 
-                </li>
-
-                <li>
-                  We hebben een eigen kruiden en sausjes mengsel wat we aan het gehakt toevoegen. 
-                </li>
-
-                <li>
-                  Het brood wat om het gehakt zit is ook erg rijk van smaak. 
-                </li>
-              </ul>
-            </p>
-
-            <p>
-              Heb jij ze al geproefd, laat dan even een beoordeling achter op onze facebookpagina.  
-            </p>
-
-            <p>
-              Wil je bestellen, scroll dan naar beneden en maak je keuze en verstuur hem dan per mail of per whatsapp .   Afhalen na afspraak in Zijtaart maar kunt een voorkeur aangeven bij je bestelling wij nemen dan contact met je op. 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium optio officiis consequatur, facilis sapiente ipsum commodi eos ullam tenetur iste corrupti nam quas nobis illo id odit natus nihil temporibus?
             </p>
           </span>
 
           <br><br><br>
 
-          <div>
+          <!-- <div>
             <OrderList :products=products @order="orderItem" />
           </div>
 
           <button class="btn confirm" @click="$refs.basketView.show = true" v-if="Object.entries(basket).length > 0">
             BEKIJK WINKELMAND
-          </button>
+          </button> -->
         </div>
       </div>
     </div>    
@@ -195,11 +153,11 @@
 
 <script>
 import OverlayPopup from '@/components/OverlayPopup'
-import OrderList from '@/components/OrderList'
+//import OrderList from '@/components/OrderList'
 
 export default {
   components: {
-    OrderList,
+    //OrderList,
     OverlayPopup
   },
 

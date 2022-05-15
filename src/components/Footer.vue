@@ -6,7 +6,7 @@
                     <div>
                         <img v-if="image"
                             style="width: 200px; padding: 20px 20px 20px 0px"
-                            :src="require('@/assets/' + image)"
+                            :src="image"
                             alt="footer image" />
                     </div>
                     <div>
@@ -17,15 +17,51 @@
 
             <template #right>
                 <span id='socials'>
-                    <a v-for="social in socials"
-                    rel="noopener"
-                    :key="social.type"
-                    :href="social.link"
-                    target="_blank">
+                    <a
+                        rel="noopener"
+                        :href="`https://www.facebook.com/${socials.facebook}`"
+                        target="_blank"
+                    >
                     
                         <div class="social">
-                            <unicon :name="social.type" />
-                            {{ social.name }}
+                            <unicon name="facebook" />
+                            {{ socials.facebook }}
+                        </div>
+                    </a>
+
+                    <a
+                        rel="noopener"
+                        :href="`mailto:${socials.email}`"
+                        target="_blank"
+                    >
+                    
+                        <div class="social">
+                            <unicon name="at" />
+                            {{ socials.email }}
+                        </div>
+                    </a>
+
+                    <a
+                        rel="noopener"
+                        :href="`tel:${socials.tel}`"
+                        target="_blank"
+                    >
+                    
+                        <div class="social">
+                            <unicon name="phone" />
+                            {{ socials.tel }}
+                        </div>
+                    </a>
+
+                    <a
+                        rel="noopener"
+                        :href="`https://api.whatsapp.com/send?phone=${socials.tel}&app=DWWSite`"
+                        target="_blank"
+                    >
+                    
+                        <div class="social">
+                            <unicon name="whatsapp" />
+                            {{ socials.tel }}
                         </div>
                     </a>
                 </span>
